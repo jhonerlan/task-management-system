@@ -29,9 +29,12 @@ composer install
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=work_db
+DB_DATABASE="nombre de tu base de datos"
 DB_USERNAME=root
 DB_PASSWORD=
+
+mi caso use xampp
+Debe Crear La Base De Datos Con El Nombre Que Le Corresponde
 
 4.Ejecutar migraciones:
 
