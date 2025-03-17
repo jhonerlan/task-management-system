@@ -1,0 +1,61 @@
+<div class="task-form-container">
+  <div *ngIf="isLoading" class="loading-indicator">
+    <p>Cargando tarea...</p>
+  </div>
+
+  <mat-card *ngIf="!isLoading">
+    <mat-card-header>
+      <mat-card-title>{{ isEditMode ? 'Editar Tarea' : 'Crear Nueva Tarea' }}</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Título</mat-label>
+          <input matInput formControlName="title" placeholder="Ingrese el título de la tarea">
+          <mat-error *ngIf="taskForm.get('title')?.hasError('required')">
+            El título es obligatorio
+          </mat-error>
+          <mat-error *ngIf="taskForm.get('title')?.hasError('minlength')">
+            El título debe tener al menos 3 caracteres
+          </mat-error>
+          <mat-error *ngIf="taskForm.get('title')?.hasError('maxlength')">
+            El título no puede exceder los 100 caracteres
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput formControlName="description" rows="5" placeholder="Ingrese la descripción de la tarea"></textarea>
+          <mat-error *ngIf="taskForm.get('description')?.hasError('required')">
+            La descripción es obligatoria
+          </mat-error>
+          <mat-error *ngIf="taskForm.get('description')?.hasError('minlength')">
+            La descripción debe tener al menos 5 caracteres
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="pending">Pendiente</mat-option>
+            <mat-option value="in_progress">En Progreso</mat-option>
+            <mat-option value="completed">Completada</mat-option>
+          </mat-select>
+          <mat-error *ngIf="taskForm.get('status')?.hasError('required')">
+            El estado es obligatorio
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button type="button" routerLink="/tasks">
+          <mat-icon>arrow_back</mat-icon> Cancelar
+        </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitting">
+          <mat-icon>save</mat-icon> {{ isEditMode ? 'Actualizar' : 'Guardar' }}
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

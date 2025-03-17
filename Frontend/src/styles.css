@@ -1,0 +1,58 @@
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.status-chip {
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-pending {
+  background-color: #ffecb3;
+  color: #856404;
+}
+
+.status-in-progress {
+  background-color: #b3e5fc;
+  color: #0c5460;
+}
+
+.status-completed {
+  background-color: #c8e6c9;
+  color: #155724;
+}
+
+.status-pending-btn {
+  background-color: #ffecb3;
+  color: #856404;
+}
+
+.status-in-progress-btn {
+  background-color: #b3e5fc;
+  color: #0c5460;
+}
+
+.status-completed-btn {
+  background-color: #c8e6c9;
+  color: #155724;
+}
+
+mat-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+<div class="app-container">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button mat-icon-button routerLink="/tasks">
+      <mat-icon>task</mat-icon>
+    </button>
+    <span class="app-title">Sistema de Gestión de Tareas</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/tasks">
+      <mat-icon>list</mat-icon>
+      Tareas
+    </button>
+    <button mat-raised-button color="accent" routerLink="/tasks/new">
+      <mat-icon>add</mat-icon>
+      Nueva Tarea
+    </button>
+  </mat-toolbar>
+
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p>© 2025 Sistema de Gestión de Tareas</p>
+    </div>
+  </footer>
+</div>

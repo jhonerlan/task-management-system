@@ -1,0 +1,91 @@
+.task-detail-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 20px;
+}
+
+.task-description {
+  margin: 20px 0;
+  white-space: pre-line;
+  line-height: 1.6;
+}
+
+.task-metadata {
+  margin: 16px 0;
+  color: #666;
+}
+
+.status-chip {
+  padding: 5px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-pending {
+  background-color: #ffecb3;
+  color: #856404;
+}
+
+.status-in-progress {
+  background-color: #b3e5fc;
+  color: #0c5460;
+}
+
+.status-completed {
+  background-color: #c8e6c9;
+  color: #155724;
+}
+
+.status-actions {
+  margin: 20px 0;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.status-pending-btn {
+  background-color: #ffecb3;
+  color: #856404;
+}
+
+.status-in-progress-btn {
+  background-color: #b3e5fc;
+  color: #0c5460;
+}
+
+.status-completed-btn {
+  background-color: #c8e6c9;
+  color: #155724;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+  .status-buttons {
+    flex-direction: column;
+  }
+
+  mat-card-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
